@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "984985008901",
+    "project_id": "cohoritfy-53295",
+    "storage_bucket": "cohoritfy-53295.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984985008901:android:0e5568d91da336f996956c",
+        "android_client_info": {
+          "package_name": "com.example.cohort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984985008901-eq25cg32tdvvs4tu8uf4g0et9772lt7i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cohort",
+            "certificate_hash": "6159f3fd7ecfd78595e40e8462391158b3489e4c"
+          }
+        },
+        {
+          "client_id": "984985008901-o15qh81rans7jv3n1li4cqvs74q1dmro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSqL7jl6za10j-L65zWGfv78P3sNS9i2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984985008901-o15qh81rans7jv3n1li4cqvs74q1dmro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
