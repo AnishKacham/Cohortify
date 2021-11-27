@@ -55,8 +55,8 @@ public class GroupsFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressBar);
 
         toolbar = view.findViewById(R.id.groupsToolbar);
-        toolbar.setTitle("All groups");
-        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setTitle("Dashboard");
+        toolbar.setTitleTextColor(Color.BLACK);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
 
