@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background_button.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_group_info.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_send_otpactivity.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_verify_otpactivity.xml" value="0.35885416666666664" />
