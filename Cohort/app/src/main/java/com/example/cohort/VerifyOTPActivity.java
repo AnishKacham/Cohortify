@@ -1,193 +1,138 @@
 package com.example.cohort;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 public class VerifyOTPActivity extends AppCompatActivity {
+    private TextView phoneNumberText;
+    private EditText verificationCodeInput;
+    private Button verifyOTPButton;
 
-    private EditText inputCode1, inputCode2, inputCode3, inputCode4, inputCode5, inputCode6;
-    private String verificationID;
+    private ProgressBar progressBar;
 
+    String verificationId;
+
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
+    private StorageReference storageReference;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_otpactivity);
+        setContentView(R.layout.activity_verify_otp);
 
-        TextView textMobile = findViewById(R.id.textMobile);
-        textMobile.setText(String.format(
-                "+91-%s",getIntent().getStringExtra("mobile")
-        ));
+        firebaseAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Users");
+        storageReference = FirebaseStorage.getInstance().getReference("Profile images");
 
-        inputCode1 = findViewById(R.id.inputCode1);
-        inputCode2 = findViewById(R.id.inputCode2);
-        inputCode3 = findViewById(R.id.inputCode3);
-        inputCode4 = findViewById(R.id.inputCode4);
-        inputCode5 = findViewById(R.id.inputCode5);
-        inputCode6 = findViewById(R.id.inputCode6);
+        phoneNumberText = findViewById(R.id.phoneNumberText);
+        verificationCodeInput = findViewById(R.id.editTextVerificationCode);
+        verifyOTPButton = findViewById(R.id.verifyOTPButton);
+        progressBar = findViewById(R.id.progressBar);
 
-        setupOTPInputs();
+        HashMap<String, String> map = (HashMap<String, String>) getIntent().getExtras().get("userMap");
+        String phoneNumber = getIntent().getStringExtra("phone");
+        Uri imageUri = (Uri) getIntent().getExtras().get("imageUri");
 
-        final ProgressBar progressBar = findViewById(R.id.progressbar);
-        final Button buttonVerifyOTP = findViewById(R.id.buttonVerifyOTP);
+        phoneNumberText.setText(phoneNumberText.getText().toString() + " " + phoneNumber);
 
-        verificationID = getIntent().getStringExtra("verificationID");
+        verificationId = getIntent().getStringExtra("verificationId");
 
-        buttonVerifyOTP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        verifyOTPButton.setOnClickListener(view -> {
+            String verificationCode = verificationCodeInput.getText().toString().trim();
+            progressBar.setVisibility(View.VISIBLE);
+            verifyOTPButton.setVisibility(View.GONE);
+            if (verificationCode.isEmpty()) {
+                Toast.makeText(this, "Please enter the OTP", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
+                verifyOTPButton.setVisibility(View.VISIBLE);
+            } else {
+                if (verificationId != null) {
 
-                if(inputCode1.getText().toString().trim().isEmpty()
-                        || inputCode2.getText().toString().trim().isEmpty()
-                        || inputCode3.getText().toString().trim().isEmpty()
-                        || inputCode4.getText().toString().trim().isEmpty()
-                        || inputCode5.getText().toString().trim().isEmpty()
-                        || inputCode6.getText().toString().trim().isEmpty()){
-                    Toast.makeText(VerifyOTPActivity.this,"Please enter valid OTP", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                String code = inputCode1.getText().toString() +
-                        inputCode2.getText().toString() +
-                        inputCode3.getText().toString() +
-                        inputCode4.getText().toString() +
-                        inputCode5.getText().toString() +
-                        inputCode6.getText().toString();
-
-                if(verificationID != null){
-                    progressBar.setVisibility(View.VISIBLE);
-                    buttonVerifyOTP.setVisibility(View.INVISIBLE);
                     PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(
-                            verificationID,
-                            code
+                            verificationId, verificationCode
                     );
-                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    progressBar.setVisibility(View.GONE);
-                                    buttonVerifyOTP.setVisibility(View.VISIBLE);
-                                    if(task.isSuccessful()){
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                        startActivity(intent);
-                                    }else{
-                                        Toast.makeText(VerifyOTPActivity.this, "The OTP entered was invalid",Toast.LENGTH_SHORT).show();
+                    firebaseAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            StorageReference fileReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
+
+                            UploadTask uploadTask = fileReference.putFile(imageUri);
+                            uploadTask.continueWithTask(task1 -> {
+                                if (!task1.isSuccessful()) {
+                                    throw Objects.requireNonNull(task1.getException());
+                                }
+                                return fileReference.getDownloadUrl();
+                            }).addOnCompleteListener(task2 -> {
+                                if (task2.isSuccessful()) {
+                                    Uri downloadUri = task2.getResult();
+                                    if (!(downloadUri == null)) {
+                                        String imagePath = downloadUri.toString();
+                                        com.example.cohort.User user = new com.example.cohort.User(firebaseAuth.getUid(), map.get("firstName"), map.get("lastName"), map.get("email"), phoneNumber, imagePath);
+                                        databaseReference.child(Objects.requireNonNull(firebaseAuth.getUid())).setValue(user).addOnCompleteListener(task3 -> {
+                                            if (task3.isSuccessful()) {
+                                                progressBar.setVisibility(View.GONE);
+                                                verifyOTPButton.setVisibility(View.VISIBLE);
+                                                Toast.makeText(VerifyOTPActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(VerifyOTPActivity.this, MainActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                VerifyOTPActivity.this.startActivity(intent);
+                                            } else {
+                                                Toast.makeText(VerifyOTPActivity.this, Objects.requireNonNull(task3.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                                                progressBar.setVisibility(View.GONE);
+                                                verifyOTPButton.setVisibility(View.VISIBLE);
+                                            }
+                                        });
                                     }
                                 }
                             });
+                        } else {
+                            Toast.makeText(this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                            verifyOTPButton.setVisibility(View.VISIBLE);
+                        }
+                    });
+
+                } else {
+                    Toast.makeText(this, "Please check internet connection", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    verifyOTPButton.setVisibility(View.VISIBLE);
                 }
             }
+
         });
 
     }
 
-    private void setupOTPInputs(){
-        inputCode1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!charSequence.toString().trim().isEmpty()){
-                    inputCode2.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        inputCode2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!charSequence.toString().trim().isEmpty()){
-                    inputCode3.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        inputCode3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!charSequence.toString().trim().isEmpty()){
-                    inputCode4.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        inputCode4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!charSequence.toString().trim().isEmpty()){
-                    inputCode5.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        inputCode5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!charSequence.toString().trim().isEmpty()){
-                    inputCode6.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+    private String getFileExtension(Uri fileUri) {
+        ContentResolver contentResolver = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(contentResolver.getType(fileUri));
     }
 }

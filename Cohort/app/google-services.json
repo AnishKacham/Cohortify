@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "984985008901",
+    "firebase_url": "https://cohoritfy-53295-default-rtdb.firebaseio.com",
     "project_id": "cohoritfy-53295",
     "storage_bucket": "cohoritfy-53295.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "984985008901-8o5sqlb6dsod9re3qtft69ma2b5k2hat.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cohort",
+            "certificate_hash": "3311e1e7a0007cbd130a9b2293eb6c0534512cc5"
+          }
+        },
         {
           "client_id": "984985008901-eq25cg32tdvvs4tu8uf4g0et9772lt7i.apps.googleusercontent.com",
           "client_type": 1,

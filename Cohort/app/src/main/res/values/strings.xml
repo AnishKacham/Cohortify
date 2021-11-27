@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">Cohort</string>
-    <string name="otp_verification">OTP Verification</string>
-    <string name="otp_info_on_number">we will send you an otp on this number</string>
-    <string name="enter_mobile_number">Enter Mobile Number</string>
-    <string name="_123457890">123457890</string>
-    <string name="didn_t_revieve_the_otp">Didn\'t revieve the otp?</string>
-    <string name="resend_otp">RESEND OTP</string>
-    <string name="verify">Verify</string>
+    <string name="app_name">Cohortify</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="title_activity_maps">Map</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
