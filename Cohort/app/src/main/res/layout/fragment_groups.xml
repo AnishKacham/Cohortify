@@ -34,7 +34,7 @@
         android:background="@drawable/background_add_group_button"
         android:padding="10dp"
         android:src="@drawable/ic_add_group"
-        app:tint="@color/whiteTextColor" />
+        app:tint="@color/blackish" />
 
     <ProgressBar
         android:id="@+id/progressBar"

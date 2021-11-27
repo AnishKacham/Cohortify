@@ -10,16 +10,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:background="#22344F"
+        android:padding="12dp"
+        >
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/groupImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:riv_corner_radius="100dp"
-            android:scaleType="centerCrop"/>
+            android:layout_width="129dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="100dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,16 +32,17 @@
             <TextView
                 android:id="@+id/groupName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:textSize="18sp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/whiteTextColor"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/groupHostName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:textSize="16sp"
+                android:textColor="@color/whiteTextColor"
                 android:layout_marginTop="4dp"/>
 
         </LinearLayout>
