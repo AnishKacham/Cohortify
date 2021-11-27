@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
-    android:background="@color/colorAccent"
+    android:background="@color/blackish"
     android:gravity="center"
     android:focusableInTouchMode="true"
     android:id="@+id/userProfile">
@@ -16,86 +16,83 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:orientation="vertical"
             android:padding="10dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/profileTextFullName"
-                    style="@style/viewParent.headerText.NoMode"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:text=""
-                    android:textColor="@color/whiteTextColor"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:orientation="vertical">
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/profileImage"
                     android:layout_width="200dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_height="200dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
+                    android:scaleType="centerCrop"
                     app:riv_corner_radius="100dp"
-                    android:scaleType="centerCrop"/>
+                    android:src="@drawable/profile_icon"/>
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/profileTextFullName"
+                    style="@style/viewParent.headerText.NoMode"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Anish Kacham"
+                    android:textColor="@color/whiteTextColor" />
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                app:cardBackgroundColor="@color/whiteTextColor"
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardBackgroundColor="@color/greenish"
+                app:cardCornerRadius="10dp">
 
                 <LinearLayout
                     android:id="@+id/userInfoLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_margin="10dp"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/profileTextFirstName"
-                        style="@style/modifiedEditText"
-                        android:text="First name:"
-                        android:textSize="14sp"
-                        android:layout_marginTop="@dimen/loginViewsMargin"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/profileTextLastName"
-                        style="@style/modifiedEditText"
-                        android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:text="Last name:"
-                        android:textSize="14sp"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:id="@+id/profileTextPhone"
                         style="@style/modifiedEditText"
+                        android:textStyle="bold"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         android:text="Phone:"
-                        android:textSize="14sp"/>
+                        android:textSize="18sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:id="@+id/profileTextEmail"
                         style="@style/modifiedEditText"
+                        android:textStyle="bold"
                         android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:layout_marginBottom="20dp"
                         android:text="Email:"
-                        android:textSize="14sp"/>
-
-                    <Button
-                        android:id="@+id/logoutButton"
-                        style="@style/loginButton"
-                        android:text="Logout"
-                        android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:layout_gravity="center_horizontal"/>
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/logoutButton"
+                style="@style/loginButton"
+                android:backgroundTint="@color/reddish"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Logout" />
 
         </LinearLayout>
 
@@ -105,10 +102,10 @@
         android:id="@+id/progressBar"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_centerVertical="true"
         android:indeterminate="true"
-        android:layout_centerInParent="true"
-        android:indeterminateTintMode="src_atop"
         android:indeterminateTint="#00ADC1"
-        android:visibility="gone"/>
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone" />
 
 </RelativeLayout>
