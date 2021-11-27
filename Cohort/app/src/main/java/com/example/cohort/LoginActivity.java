@@ -73,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
         getOTPButton.setOnClickListener(view -> {
             String phoneNumber = phoneInput.getText().toString().trim();
 
-            progressBar.setVisibility(View.VISIBLE);
             getOTPButton.setVisibility(View.GONE);
 
             if (phoneNumber.isEmpty()) {

@@ -1,0 +1,48 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"app/src/main/res/drawable/background_button.xml\" value=\"0.375\" />\r\n        <entry key=\"app/src/main/res/layout/activity_main.xml\" value=\"0.2\" />\r\n        <entry key=\"app/src/main/res/layout/activity_send_otpactivity.xml\" value=\"0.33\" />\r\n        <entry key=\"app/src/main/res/layout/activity_verify_otpactivity.xml\" value=\"0.35885416666666664\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision c6a98ad7f890f08f1ae595386c4404e251c0539d)
++++ b/.idea/misc.xml	(date 1638009191430)
+@@ -3,6 +3,9 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
++        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_main.xml" value="0.176" />
++        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_send_otpactivity.xml" value="0.20199275362318841" />
++        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_verify_otpactivity.xml" value="0.20199275362318841" />
+         <entry key="app/src/main/res/drawable/background_button.xml" value="0.375" />
+         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+         <entry key="app/src/main/res/layout/activity_send_otpactivity.xml" value="0.33" />
+Index: ../.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../.idea/.gitignore b/../.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1638008258261)
++++ b/../.idea/.gitignore	(date 1638008258261)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: ../.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../.idea/misc.xml b/../.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1638008424892)
++++ b/../.idea/misc.xml	(date 1638008424892)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Android API 29 Platform" project-jdk-type="Android SDK" />
++</project>
+\ No newline at end of file
