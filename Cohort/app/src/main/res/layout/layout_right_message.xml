@@ -4,20 +4,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="100dp"
     android:layout_marginTop="10dp"
     android:padding="10dp"
-    android:layout_marginEnd="10dp"
     android:background="@drawable/background_sender_message">
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:textColor="#E3E0E0"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"/>
+        android:textColor="#1560CB"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/editedText"
@@ -37,19 +38,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/nameText"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/colorPrimary"/>
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/blackish"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/timestampText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_below="@id/messageText"
-        android:layout_marginEnd="5dp"
-        android:textSize="12sp"
-        android:textColor="#E3E0E0"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
 
 </RelativeLayout>

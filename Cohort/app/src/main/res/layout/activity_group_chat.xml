@@ -4,32 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blackish"
     tools:context=".GroupChatActivity">
 
     <LinearLayout
         android:id="@+id/groupInfoLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/greenish"
         android:orientation="horizontal"
-        android:background="#00ADC1"
         android:padding="10dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/groupImage"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:riv_corner_radius="100dp"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="100dp" />
 
         <TextView
             android:id="@+id/groupName"
+            style="@style/viewParent.headerText.NoMode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            style="@style/viewParent.headerText.NoMode"
-            android:textSize="20sp"
-            android:textColor="@color/whiteTextColor"
-            android:layout_gravity="center_vertical"/>
+            android:textColor="@color/blackish"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -38,15 +39,17 @@
         android:layout_height="match_parent"
         android:layout_below="@id/groupInfoLayout"
         android:layout_above="@id/sendMessageLayout"
+        android:layout_marginBottom="10dp"
         android:background="#EFEBEB"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/messagesRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:stackFromEnd="true"/>
+                android:id="@+id/messagesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/blackish"
+                app:stackFromEnd="true"/>
 
     </LinearLayout>
 
@@ -56,31 +59,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:background="@color/whiteTextColor"
         android:orientation="horizontal"
-        android:padding="10dp"
-        android:background="@color/colorPrimary">
+        android:padding="10dp">
 
 
         <EditText
             android:id="@+id/editTextMessage"
-            android:layout_width="300dp"
+            android:layout_width="302dp"
             android:layout_height="wrap_content"
-            android:hint="Type a new message"
             android:layout_gravity="center_vertical"
             android:background="@color/colorPrimary"
+            android:hint="Type a new message"
             android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="#717171"
-            android:textSize="14sp"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/sendMessageImage"
-            android:layout_width="35dp"
+            android:layout_width="69dp"
             android:layout_height="35dp"
-            android:src="@drawable/ic_send"
-            app:tint="@color/colorAccent"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_send"
+            app:tint="@color/greenish" />
 
     </LinearLayout>
 
