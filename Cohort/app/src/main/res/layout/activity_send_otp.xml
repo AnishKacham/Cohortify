@@ -1,102 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SendOTPActivity"
-    android:layout_gravity="center"
-    android:background="@color/register_bk_color"
-    android:focusableInTouchMode="true"
-    android:gravity="center">
+    tools:context=".LoginActivity"
+    android:background="@color/blackish"
+    android:focusableInTouchMode="true">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:indeterminate="true"
+        android:indeterminateTint="#00ADC1"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical"
-            android:padding="20dp">
+    <Button
+        android:id="@+id/getOTPButton"
+        style="@style/loginButton"
+        android:layout_width="100dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Get OTP"
+        android:textColor="@color/blackish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintVertical_bias="0.459" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="-50dp"
+        android:src="@drawable/circle_otp_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
 
-                <TextView
-                    style="@style/viewParent.headerText.NoMode"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="Let's create\nyour new\naccount!"
-                    android:textColor="@color/whiteTextColor"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="-50dp"
+        android:src="@drawable/circle_otp_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:src="@drawable/send_otp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-50dp"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="-20dp"
+        android:src="@drawable/circle_otp_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585" />
 
-            </RelativeLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-50dp"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="-20dp"
+        android:src="@drawable/circle_otp_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/whiteTextColor"
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="20dp">
+    <EditText
+        android:id="@+id/editTextPhone"
+        style="@style/modifiedEditText"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="180dp"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/greenish"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/getOTPButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical">
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputPhone"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-
-                        <EditText
-                            android:id="@+id/editTextPhone"
-                            style="@style/modifiedEditText"
-                            android:hint="+91-1234567890"
-                            android:inputType="phone"
-                            android:maxLines="1"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <Button
-                        android:id="@+id/getOTPButton"
-                        style="@style/loginButton"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:text="Get OTP"/>
-
-                    <ProgressBar
-                        android:id="@+id/progressBar"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:indeterminate="true"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="20dp"
-                        android:visibility="gone"
-                        android:indeterminateTintMode="src_atop"
-                        android:indeterminateTint="#00ADC1"/>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

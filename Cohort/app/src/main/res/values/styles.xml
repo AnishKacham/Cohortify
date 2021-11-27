@@ -23,7 +23,7 @@
     </style>
 
     <style name="viewParent.headerText.NoMode">
-        <item name="android:textColor">@color/darkTextColor</item>
+        <item name="android:textColor">@color/greenish</item>
     </style>
 
     <style name="parent">
