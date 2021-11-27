@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateGroupActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/headingText"
+                style="@style/viewParent.headerText.NoMode"
+                android:text="Create new group"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputGroupName"
+                style="@style/parent"
+                android:layout_marginTop="40dp"
+                android:layout_below="@id/headingText">
+
+                <EditText
+                    android:id="@+id/editTextGroupName"
+                    style="@style/modifiedEditText"
+                    android:hint="Enter group name"
+                    android:inputType="text"
+                    android:maxLines="1"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputGroupDescription"
+                style="@style/parent"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textInputGroupName">
+
+                <EditText
+                    android:id="@+id/editTextGroupDescription"
+                    style="@style/modifiedEditText"
+                    android:layout_height="300dp"
+                    android:hint="Enter group description"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/searchTagsInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textInputGroupDescription">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter three search tags for this group"
+                    android:textSize="14sp"
+                    android:textColor="#494848"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputSearchTag1"
+                    style="@style/parent"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/editTextSearchTag1"
+                        style="@style/modifiedEditText"
+                        android:hint="Enter first search tag"
+                        android:maxLines="1"
+                        android:inputType="text"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputSearchTag2"
+                    style="@style/parent"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/editTextSearchTag2"
+                        style="@style/modifiedEditText"
+                        android:hint="Enter second search tag"
+                        android:maxLines="1"
+                        android:inputType="text"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputSearchTag3"
+                    style="@style/parent"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/editTextSearchTag3"
+                        style="@style/modifiedEditText"
+                        android:hint="Enter third search tag"
+                        android:maxLines="1"
+                        android:inputType="text"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/nextButton"
+                style="@style/loginButton"
+                android:layout_below="@id/searchTagsInputLayout"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="Next"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
