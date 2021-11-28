@@ -70,6 +70,8 @@
         android:maxLines="1"
         android:textAlignment="center"
         android:textColor="@color/greenish"
+        android:textColorHighlight="@color/greenish"
+        android:textColorHint="@color/whiteTextColor"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/getOTPButton"
         app:layout_constraintEnd_toEndOf="parent"

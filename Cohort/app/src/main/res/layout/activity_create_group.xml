@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blackish"
     tools:context=".CreateGroupActivity">
 
     <ScrollView
@@ -18,38 +19,73 @@
             <TextView
                 android:id="@+id/headingText"
                 style="@style/viewParent.headerText.NoMode"
-                android:text="Create new group"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:text="Create new group" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/headingText"
+                android:layout_marginTop="21dp"
+                android:paddingLeft="5dp"
+                android:text="Name"
+                android:textColor="@color/greenish"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputGroupName"
                 style="@style/parent"
+                android:layout_below="@id/headingText"
                 android:layout_marginTop="40dp"
-                android:layout_below="@id/headingText">
+                android:textColorHint="@color/whiteTextColor">
 
                 <EditText
                     android:id="@+id/editTextGroupName"
-                    style="@style/modifiedEditText"
-                    android:hint="Enter group name"
+                    style="@style/editTextNoColor"
+                    android:layout_height="50dp"
+                    android:background="@drawable/text_field"
+                    android:autofillHints="Enter group name"
                     android:inputType="text"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/whiteTextColor"
+                    android:textColorHighlight="@color/reddish"
+                    android:textSize="20sp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/headingText"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="5dp"
+                    android:text="Description"
+
+                    android:textColor="@color/greenish"
+                    android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputGroupDescription"
                 style="@style/parent"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/textInputGroupName">
+                android:layout_below="@id/textInputGroupName"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/whiteTextColor">
 
                 <EditText
                     android:id="@+id/editTextGroupDescription"
-                    style="@style/modifiedEditText"
-                    android:layout_height="300dp"
-                    android:hint="Enter group description"
+                    style="@style/editTextNoColor"
+                    android:layout_height="200dp"
+                    android:autofillHints="Enter group description"
+                    android:background="@drawable/text_field"
+                    android:gravity="top"
                     android:inputType="textMultiLine"
-                    android:gravity="top"/>
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/whiteTextColor"
+                    android:textColorHighlight="@color/reddish"
+                    android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,56 +93,86 @@
                 android:id="@+id/searchTagsInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_below="@id/textInputGroupDescription"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/textInputGroupDescription">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Enter three search tags for this group"
-                    android:textSize="14sp"
-                    android:textColor="#494848"/>
+                    android:text="Search tag #1"
+                    android:textColor="@color/greenish"
+                    android:textSize="14sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputSearchTag1"
                     style="@style/parent"
-                    android:layout_marginTop="10dp">
+                    android:textColorHint="@color/greenish">
 
                     <EditText
                         android:id="@+id/editTextSearchTag1"
-                        style="@style/modifiedEditText"
-                        android:hint="Enter first search tag"
+                        style="@style/editTextNoColor"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_field"
+                        android:inputType="text"
+                        android:layout_marginBottom="20dp"
                         android:maxLines="1"
-                        android:inputType="text"/>
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/whiteTextColor"
+                        android:textColorHighlight="@color/reddish"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Search tag #2"
+                        android:textColor="@color/greenish"
+                        android:textSize="14sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputSearchTag2"
                     style="@style/parent"
-                    android:layout_marginTop="10dp">
+                    android:textColorHint="@color/greenish">
 
                     <EditText
                         android:id="@+id/editTextSearchTag2"
-                        style="@style/modifiedEditText"
-                        android:hint="Enter second search tag"
+                        style="@style/editTextNoColor"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_field"
+                        android:inputType="text"
                         android:maxLines="1"
-                        android:inputType="text"/>
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/whiteTextColor"
+                        android:layout_marginBottom="20dp"
+                        android:textColorHighlight="@color/reddish"
+                        android:textColorHint="@color/greenish"
+                        android:textSize="20sp" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Search tag #3"
+                        android:textColor="@color/greenish"
+                        android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputSearchTag3"
                     style="@style/parent"
-                    android:layout_marginTop="10dp">
+                    android:textColorHint="@color/greenish">
 
                     <EditText
                         android:id="@+id/editTextSearchTag3"
-                        style="@style/modifiedEditText"
-                        android:hint="Enter third search tag"
+                        style="@style/editTextNoColor"
+                        android:layout_height="40dp"
+                        android:background="@drawable/text_field"
+                        android:inputType="text"
                         android:maxLines="1"
-                        android:inputType="text"/>
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/whiteTextColor"
+                        android:textColorHighlight="@color/reddish"
+                        android:textSize="20sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,10 +183,11 @@
                 android:id="@+id/nextButton"
                 style="@style/loginButton"
                 android:layout_below="@id/searchTagsInputLayout"
-                android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
-                android:text="Next"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_corner"
+                android:text="Next" />
 
         </RelativeLayout>
 
