@@ -21,24 +21,27 @@
                 style="@style/viewParent.headerText.NoMode"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Create new group" />
+                android:text="Create new group"
+                android:textSize="30sp" />
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/headingText"
                 android:layout_marginTop="21dp"
                 android:paddingLeft="5dp"
+                android:paddingBottom="5dp"
                 android:text="Name"
                 android:textColor="@color/greenish"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputGroupName"
                 style="@style/parent"
                 android:layout_below="@id/headingText"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="48dp"
                 android:textColorHint="@color/whiteTextColor">
 
                 <EditText
@@ -56,13 +59,14 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/headingText"
                     android:layout_marginTop="20dp"
                     android:paddingLeft="5dp"
                     android:text="Description"
 
                     android:textColor="@color/greenish"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:text="Search tag #1"
                     android:textColor="@color/greenish"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputSearchTag1"
@@ -121,12 +125,13 @@
                         android:textColor="@color/whiteTextColor"
                         android:textColorHighlight="@color/reddish"
                         android:textSize="20sp" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Search tag #2"
                         android:textColor="@color/greenish"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:text="Search tag #3"
                         android:textColor="@color/greenish"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

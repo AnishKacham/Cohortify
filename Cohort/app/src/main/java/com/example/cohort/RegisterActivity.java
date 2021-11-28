@@ -49,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(this, com.example.cohort.UserProfileImageActivity.class);
                 intent.putExtra("userMap", map);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
 
