@@ -46,10 +46,7 @@ public class AccountFragment extends Fragment {
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-
         fullNameText = view.findViewById(R.id.profileTextFullName);
-        firstNameText = view.findViewById(R.id.profileTextFirstName);
-        lastNameText = view.findViewById(R.id.profileTextLastName);
         phoneText = view.findViewById(R.id.profileTextPhone);
         emailText = view.findViewById(R.id.profileTextEmail);
         profileImage = view.findViewById(R.id.profileImage);
@@ -79,18 +76,14 @@ public class AccountFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 com.example.cohort.User user = snapshot.getValue(com.example.cohort.User.class);
-                String fullName = user.getFirstName() + "\n" + user.getLastName();
-                String firstName = user.getFirstName();
-                String lastName = user.getLastName();
+                String fullName = user.getFirstName() + " " + user.getLastName();
                 String phone = user.getPhone();
                 String email = user.getEmail();
                 String imageUrl = user.getImageUrl();
 
                 fullNameText.setText(fullName);
-                firstNameText.setText("First name: " + firstName);
-                lastNameText.setText("Last name: " + lastName);
-                phoneText.setText("Phone: " + phone);
-                emailText.setText("Email: " + email);
+                phoneText.setText(phone);
+                emailText.setText(email);
 
                 if (getContext() != null) {
                     Glide.with(getContext())

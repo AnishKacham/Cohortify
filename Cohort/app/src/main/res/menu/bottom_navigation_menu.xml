@@ -3,14 +3,17 @@
 
     <item android:id="@+id/groups"
         android:icon="@drawable/ic_group"
+        android:enabled="true"
         android:title="Groups"/>
 
     <item android:id="@+id/account"
         android:icon="@drawable/ic_account"
+        android:enabled="true"
         android:title="Account"/>
 
     <item android:id="@+id/myGroups"
         android:icon="@drawable/ic_my_groups"
+        android:enabled="true"
         android:title="My Groups" />
 
 

@@ -12,5 +12,6 @@
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#11CFC5</color>
     <color name="greenish">#00E091</color>
+    <color name="reddish">#FD6868</color>
 
 </resources>
