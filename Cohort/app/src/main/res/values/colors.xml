@@ -13,5 +13,6 @@
     <color name="primaryTextColor">#11CFC5</color>
     <color name="greenish">#00E091</color>
     <color name="reddish">#FD6868</color>
+    <color name="lightgreenish">#9ae6cb</color>
 
 </resources>

@@ -10,40 +10,97 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="horizontal"
-        android:background="#22344F"
-        android:padding="12dp"
-        >
-
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/groupImage"
-            android:layout_width="129dp"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            app:riv_corner_radius="100dp" />
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:background="#9ae6cb"
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_marginStart="8dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/groupImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:src="@color/blackish"
+                app:riv_corner_radius="100dp"/>
 
             <TextView
                 android:id="@+id/groupName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="18sp"
-                android:textColor="@color/whiteTextColor"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:text="GROUP NAME "
+                android:textColor="@color/blackish"
                 android:textStyle="bold" />
 
+        </LinearLayout>
+        <TextView
+            android:id="@+id/groupDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            android:maxLength="70"
+            android:ellipsize="end"
+            android:textColor="@color/blackish"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:textColor="@color/blackish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/groupHostName"
+            android:text="HOST ME"
+            android:layout_marginLeft="8dp"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:orientation="horizontal">
+
             <TextView
-                android:id="@+id/groupHostName"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="16sp"
-                android:textColor="@color/whiteTextColor"
-                android:layout_marginTop="4dp"/>
+                android:id="@+id/tag1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_corner_groups_card"
+                android:padding="8dp"
+                android:textColor="@color/lightgreenish"
+                android:text="Tag 1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Tag 2"
+                android:textSize="18sp"
+                android:textColor="@color/lightgreenish"
+                android:background="@drawable/rounded_corner_groups_card"
+                android:layout_marginRight="20dp" />
+            <TextView
+                android:id="@+id/tag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:ellipsize="end"
+                android:textColor="@color/lightgreenish"
+                android:text="Tag 3"
+                android:textSize="18sp"
+                android:maxLength="4"
+                android:background="@drawable/rounded_corner_groups_card"
+                android:layout_marginRight="20dp"/>
+
 
         </LinearLayout>
 
