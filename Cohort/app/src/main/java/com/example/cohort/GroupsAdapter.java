@@ -50,6 +50,11 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupsView
                 .into(holder.groupImage);
 
         holder.groupName.setText(group.getName());
+        holder.t1.setText(group.getSearchTags().get(0));
+        holder.t2.setText(group.getSearchTags().get(1));
+        holder.t3.setText(group.getSearchTags().get(2));
+        holder.groupDesc.setText(group.getDescription());
+
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
         databaseReference.child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).addValueEventListener(new ValueEventListener() {
@@ -121,14 +126,18 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupsView
 
     public class GroupsViewHolder extends RecyclerView.ViewHolder {
         private RoundedImageView groupImage;
-        private TextView groupName, groupHostName;
+        private TextView groupName, groupDesc, groupHostName;
         private CardView groupLayout;
+        private TextView t1,t2,t3;
 
         public GroupsViewHolder(@NonNull View view) {
             super(view);
-
+            t1 = view.findViewById(R.id.tag1);
+            t2 = view.findViewById(R.id.tag2);
+            t3 = view.findViewById(R.id.tag3);
             groupImage = view.findViewById(R.id.groupImage);
             groupName = view.findViewById(R.id.groupName);
+            groupDesc = view.findViewById(R.id.groupDesc);
             groupHostName = view.findViewById(R.id.groupHostName);
             groupLayout = view.findViewById(R.id.groupLayout);
         }
