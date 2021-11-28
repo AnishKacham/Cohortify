@@ -3,61 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/background_add_group_button.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/background_receiver_message.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/background_sender_message.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle.xml" value="0.26145833333333335" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_4.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_OTP_1.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_login_1.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_login_2.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_otp_1.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_otp_2.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/circle_otp_3.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/ic_add_group.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/ic_group.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/ic_register_hero.xml" value="0.26145833333333335" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/line_break.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/drawable/rounded_corner.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_create_group.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_edit_group_info.xml" value="0.264" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_group_chat.xml" value="0.264" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_group_chat_2.xml" value="0.264" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_group_image.xml" value="0.22146739130434784" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_group_info.xml" value="0.22146739130434784" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_group_members.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_login_2.xml" value="0.2" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_login_verify_otp.xml" value="0.22146739130434784" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_login_verify_otp_2.xml" value="0.2" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_maps.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_member_profile.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_register.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_send_otp.xml" value="0.264" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_send_otp_2.xml" value="0.2" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_send_otpactivity.xml" value="0.20199275362318841" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_user_profile_image.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_verify_otp.xml" value="0.2" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_verify_otp_2.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/activity_verify_otpactivity.xml" value="0.20199275362318841" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/circle.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/circle_login1.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/fragment_account.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/fragment_groups.xml" value="0.264" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/fragment_my_groups.xml" value="0.152" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_edit_message_dialog.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_group_item.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_group_member.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_join_leave_message.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_left_message.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_message_bottom_sheet.xml" value="0.259375" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/layout/layout_right_message.xml" value="0.536" />
-        <entry key="..\:/Users/vinay/StudioProjects/Cohortify/Cohort/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.259375" />
+        <entry key="app/src/main/res/drawable/background_add_group_button.xml" value="0.375" />
+        <entry key="app/src/main/res/drawable/background_bottom_sheet.xml" value="0.375" />
         <entry key="app/src/main/res/drawable/background_button.xml" value="0.375" />
+        <entry key="app/src/main/res/drawable/background_sender_message.xml" value="0.375" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.375" />
+        <entry key="app/src/main/res/drawable/rounded_corner_groups_card.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_create_group.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_edit_group_info.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_group_chat.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_group_image.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_group_info.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_group_members.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_login_verify_otp.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.3072916666666667" />
+        <entry key="app/src/main/res/layout/activity_member_profile.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_send_otp.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/activity_send_otpactivity.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_user_profile_image.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_verify_otp.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/activity_verify_otpactivity.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/fragment_groups.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/fragment_my_groups.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_edit_message_dialog.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_group_item.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_group_member.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_join_leave_message.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_left_message.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_message_bottom_sheet.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/layout_right_message.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.35885416666666664" />
       </map>
     </option>
   </component>
