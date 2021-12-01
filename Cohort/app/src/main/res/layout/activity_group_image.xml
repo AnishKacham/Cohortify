@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GroupImageActivity"
-    android:background="@color/login_bk_color"
+    android:background="@color/blackish"
     android:layout_gravity="center"
     android:gravity="center"
     android:focusableInTouchMode="true">
@@ -22,27 +22,30 @@
                 android:id="@+id/textForImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select an image for the group profile here"
+                android:text="Select a group profile"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"/>
+                android:textColor="@color/greenish"
+                android:textSize="23sp" />
 
             <ImageView
                 android:id="@+id/selectGroupImage"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_add_group_image"
+                android:layout_below="@id/textForImage"
+                android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
-                android:layout_below="@id/textForImage"/>
+                android:src="@drawable/ic_add_group_image"
+                android:paddingLeft="15dp"
+                app:tint="@color/whiteTextColor" />
 
             <Button
                 android:id="@+id/createGroupButton"
                 style="@style/loginButton"
-                android:text="Create group"
                 android:layout_below="@id/selectGroupImage"
+                android:layout_width="150dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:text="Create group" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
