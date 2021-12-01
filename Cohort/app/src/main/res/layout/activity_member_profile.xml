@@ -8,7 +8,7 @@
     tools:context=".MemberProfileActivity"
     android:layout_gravity="center"
     android:gravity="center"
-    android:background="@color/colorAccent"
+    android:background="@color/blackish"
     android:focusableInTouchMode="true">
 
     <ScrollView
@@ -17,41 +17,48 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:orientation="vertical"
             android:padding="10dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/profileTextFullName"
                     style="@style/viewParent.headerText.NoMode"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
                     android:text=""
-                    android:textColor="@color/whiteTextColor"/>
+                    android:textColor="@color/whiteTextColor"
+                    android:textSize="27dp" />
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/profileImage"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    app:riv_corner_radius="100dp"
-                    android:scaleType="centerCrop"/>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_corner_radius="100dp" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                app:cardBackgroundColor="@color/whiteTextColor"
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/blackish"
+                app:cardCornerRadius="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -62,37 +69,50 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/profileTextFirstName"
                         style="@style/modifiedEditText"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:background="@drawable/text_field"
+                        android:padding="10dp"
                         android:text="First name:"
-                        android:textSize="14sp"
-                        android:layout_marginTop="@dimen/loginViewsMargin"/>
+                        android:textColor="@color/greenish"
+                        android:textSize="20sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/profileTextLastName"
                         style="@style/modifiedEditText"
                         android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:background="@drawable/text_field"
+                        android:padding="10dp"
                         android:text="Last name:"
-                        android:textSize="14sp"/>
+                        android:textColor="@color/greenish"
+                        android:textSize="20sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/profileTextPhone"
                         style="@style/modifiedEditText"
                         android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:background="@drawable/text_field"
+                        android:padding="10dp"
                         android:text="Phone:"
-                        android:textSize="14sp"/>
+                        android:textColor="@color/greenish"
+                        android:textSize="20sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/profileTextEmail"
                         style="@style/modifiedEditText"
                         android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:background="@drawable/text_field"
+                        android:padding="10dp"
                         android:text="Email:"
-                        android:textSize="14sp"/>
+                        android:textColor="@color/greenish"
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/backButton"
                         style="@style/loginButton"
-                        android:text="Back"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:layout_gravity="center_horizontal"/>
+                        android:background="@drawable/rounded_corner"
+                        android:text="Back" />
 
                 </LinearLayout>
 

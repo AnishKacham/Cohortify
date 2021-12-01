@@ -14,10 +14,14 @@
         android:padding="10dp">
 
         <TextView
-            android:textSize="28dp"
+
+            android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingLeft="10dp"
             android:text="My Cohorts"
+            android:textStyle="bold"
             android:textColor="@color/blackish" />
 
     </LinearLayout>

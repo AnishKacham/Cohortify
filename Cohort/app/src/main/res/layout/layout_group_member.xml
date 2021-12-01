@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:background="@color/lightgreenish"
+        android:padding="10dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/userProfileImage"
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_gravity="center_vertical"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"/>
 

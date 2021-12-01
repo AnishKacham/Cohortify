@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GroupMembersActivity"
-    android:background="#EFEBEB">
+    android:background="@color/blackish">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,7 +13,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:id="@+id/header"
@@ -22,17 +23,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:background="#00ADC1"
+                android:background="@color/greenish"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/headingText"
                     style="@style/viewParent.headerText.NoMode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/whiteTextColor"
-                    android:textSize="20sp" />
+                    android:textColor="@color/blackish"
+                    android:textSize="23sp" />
 
             </LinearLayout>
 
@@ -48,9 +49,12 @@
             <Button
                 android:id="@+id/viewHostDetailsButton"
                 style="@style/loginButton"
+                android:layout_width="wrap_content"
                 android:layout_below="@id/membersRecyclerView"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_corner"
+                android:padding="10dp"
                 android:text="View host details" />
 
         </RelativeLayout>
