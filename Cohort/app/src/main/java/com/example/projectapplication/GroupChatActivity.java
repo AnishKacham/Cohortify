@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -67,7 +66,7 @@ public class GroupChatActivity extends AppCompatActivity {
         loadMessages();
 
         groupInfoLayout.setOnClickListener(view -> {
-            Intent intent = new Intent(this, com.example.cohort.GroupInfoActivity.class);
+            Intent intent = new Intent(this, com.example.projectapplication.GroupInfoActivity.class);
             intent.putExtra("groupId", groupId);
             intent.putExtra("hostName", hostName);
             startActivity(intent);
@@ -134,16 +133,21 @@ public class GroupChatActivity extends AppCompatActivity {
         groupChatsDatabaseReference.child(groupId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                messages.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    Message message = dataSnapshot.getValue(Message.class);
-                    messages.add(message);
+                if (snapshot.exists()) {
+                    Group group = snapshot.getValue(Group.class);
+
+                    assert group != null;
+                    Glide.with(getApplicationContext())
+                            .asBitmap()
+                            .load(group.getImageUrl())
+                            .into(groupImage);
+
+                    groupName.setText(group.getName());
+                } else {
+                    Intent intent = new Intent(GroupChatActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
-                LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-                layoutManager.setStackFromEnd(true);
-                messagesRecyclerView.setLayoutManager(layoutManager);
-                messagesAdapter = new MessagesAdapter(messages, GroupChatActivity.this, GroupChatActivity.this);
-                messagesRecyclerView.setAdapter(messagesAdapter);
             }
 
             @Override

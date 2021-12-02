@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -43,7 +43,7 @@ public class MemberProfileActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                com.example.cohort.User member = snapshot.getValue(com.example.cohort.User.class);
+                com.example.projectapplication.User member = snapshot.getValue(com.example.projectapplication.User.class);
                 assert member != null;
                 fullName.setText(member.getFirstName() + "\n" + member.getLastName());
                 firstName.setText("First name: " + member.getFirstName());

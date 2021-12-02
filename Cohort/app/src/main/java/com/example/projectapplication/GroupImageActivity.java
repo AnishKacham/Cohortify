@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
@@ -91,7 +91,7 @@ public class GroupImageActivity extends AppCompatActivity {
                             searchTags.add(map.get("searchTag2"));
                             searchTags.add(map.get("searchTag3"));
 
-                            com.example.cohort.Group group = new com.example.cohort.Group(groupId, hostId, name, description, imagePath, null, searchTags);
+                            com.example.projectapplication.Group group = new com.example.projectapplication.Group(groupId, hostId, name, description, imagePath, null, searchTags);
 
                             assert groupId != null;
                             databaseReference.child(groupId).setValue(group).addOnCompleteListener(task1 -> {
@@ -99,7 +99,7 @@ public class GroupImageActivity extends AppCompatActivity {
                                     Toast.makeText(this, "Group created successfully!", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
                                     createGroupButton.setVisibility(View.VISIBLE);
-                                    Intent intent = new Intent(this, com.example.cohort.MainActivity.class);
+                                    Intent intent = new Intent(this, com.example.projectapplication.MainActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
                                 } else {

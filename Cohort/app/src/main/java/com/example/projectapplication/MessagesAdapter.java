@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -32,13 +32,13 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MessagesHolder> {
-    private ArrayList<com.example.cohort.Message> messages;
+    private ArrayList<com.example.projectapplication.Message> messages;
     private Context context;
     private Activity activity;
 
     private final static int MESSAGE_LEFT = 0, MESSAGE_RIGHT = 1, JOIN_LEAVE_MESSAGE = 2;
 
-    public MessagesAdapter (ArrayList<com.example.cohort.Message> messages, Context context, Activity activity) {
+    public MessagesAdapter (ArrayList<com.example.projectapplication.Message> messages, Context context, Activity activity) {
         this.messages = messages;
         this.context = context;
         this.activity = activity;
@@ -67,7 +67,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
                 @SuppressLint("SetTextI18n")
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    com.example.cohort.User user = snapshot.getValue(com.example.cohort.User.class);
+                    com.example.projectapplication.User user = snapshot.getValue(com.example.projectapplication.User.class);
 
                     if (messages.get(position).senderId.equals(FirebaseAuth.getInstance().getUid())) {
                         holder.nameText.setText("You");
@@ -106,7 +106,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
                     });
                     bottomSheetView.findViewById(R.id.editMsgButton).setOnClickListener(view1 -> {
 
-                        com.example.cohort.EditMessageDialog editMessageDialog = new com.example.cohort.EditMessageDialog(messages.get(position), position, context);
+                        com.example.projectapplication.EditMessageDialog editMessageDialog = new com.example.projectapplication.EditMessageDialog(messages.get(position), position, context);
                         editMessageDialog.show(((FragmentActivity) context).getSupportFragmentManager(), "Edit Message");
 
 
@@ -125,7 +125,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
                 @SuppressLint("SetTextI18n")
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    com.example.cohort.User user = snapshot.getValue(com.example.cohort.User.class);
+                    com.example.projectapplication.User user = snapshot.getValue(com.example.projectapplication.User.class);
                     assert user != null;
                     if (messages.get(position).joinLeave.equals("joined")) {
                         holder.joinLeaveText.setText(user.getFirstName() + " " + user.getLastName() + " has joined the group");
@@ -146,7 +146,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
 
     }
 
-    private void deleteMessage(com.example.cohort.Message message, int position) {
+    private void deleteMessage(com.example.projectapplication.Message message, int position) {
         DatabaseReference messagesReference = FirebaseDatabase.getInstance().getReference("Group chats").child(message.groupId);
         messages.remove(position);
         messagesReference.setValue(messages).addOnCompleteListener(task -> {

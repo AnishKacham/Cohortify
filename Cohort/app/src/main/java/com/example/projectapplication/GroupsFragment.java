@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -33,11 +33,11 @@ import java.util.ArrayList;
 public class GroupsFragment extends Fragment {
     private ImageView createGroupImage;
     private RecyclerView groupsRecyclerView;
-    private com.example.cohort.GroupsAdapter groupsAdapter;
+    private com.example.projectapplication.GroupsAdapter groupsAdapter;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
 
-    private ArrayList<com.example.cohort.Group> groups, searchGroups;
+    private ArrayList<com.example.projectapplication.Group> groups, searchGroups;
 
     private ProgressBar progressBar;
 
@@ -80,13 +80,13 @@ public class GroupsFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        com.example.cohort.Group group = dataSnapshot.getValue(com.example.cohort.Group.class);
+                        com.example.projectapplication.Group group = dataSnapshot.getValue(com.example.projectapplication.Group.class);
                         assert group != null;
                         groups.add(group);
                     }
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
                     groupsRecyclerView.setLayoutManager(layoutManager);
-                    groupsAdapter = new com.example.cohort.GroupsAdapter(groups, getContext());
+                    groupsAdapter = new com.example.projectapplication.GroupsAdapter(groups, getContext());
                     groupsRecyclerView.setAdapter(groupsAdapter);
                     progressBar.setVisibility(View.GONE);
                 }
@@ -128,7 +128,7 @@ public class GroupsFragment extends Fragment {
 
     private void searchGroup(String searchInput) {
         searchGroups = new ArrayList<>();
-        for (com.example.cohort.Group group : groups) {
+        for (com.example.projectapplication.Group group : groups) {
             String tag1 = group.getSearchTags().get(0);
             String tag2 = group.getSearchTags().get(1);
             String tag3 = group.getSearchTags().get(2);
@@ -137,7 +137,7 @@ public class GroupsFragment extends Fragment {
                 searchGroups.add(group);
             }
         }
-        groupsAdapter = new com.example.cohort.GroupsAdapter(searchGroups, getContext());
+        groupsAdapter = new com.example.projectapplication.GroupsAdapter(searchGroups, getContext());
         groupsRecyclerView.setAdapter(groupsAdapter);
     }
 }

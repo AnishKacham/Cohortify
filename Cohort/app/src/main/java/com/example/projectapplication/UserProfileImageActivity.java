@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -44,7 +44,7 @@ public class UserProfileImageActivity extends AppCompatActivity {
             if (imageUri == null) {
                 Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent = new Intent(this, com.example.cohort.SendOTPActivity.class);
+                Intent intent = new Intent(this, com.example.projectapplication.SendOTPActivity.class);
                 intent.putExtra("userMap", map);
                 intent.putExtra("imageUri", imageUri);
                 startActivity(intent);

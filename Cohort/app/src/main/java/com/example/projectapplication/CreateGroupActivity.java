@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,7 +44,7 @@ public class CreateGroupActivity extends AppCompatActivity {
                 groupMap.put("searchTag2", searchTag2);
                 groupMap.put("searchTag3", searchTag3);
 
-                Intent intent = new Intent(this, com.example.cohort.GroupImageActivity.class);
+                Intent intent = new Intent(this, com.example.projectapplication.GroupImageActivity.class);
                 intent.putExtra("groupMap", groupMap);
                 startActivity(intent);
             }

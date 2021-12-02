@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,8 +22,8 @@ import java.util.ArrayList;
 public class MyGroupsFragment extends Fragment {
     private DatabaseReference groupsReference;
     private RecyclerView myGroupsRecyclerView;
-    private com.example.cohort.GroupsAdapter myGroupsAdapter;
-    private ArrayList<com.example.cohort.Group> myGroups;
+    private com.example.projectapplication.GroupsAdapter myGroupsAdapter;
+    private ArrayList<com.example.projectapplication.Group> myGroups;
     private User currentUser;
 
     @Override
@@ -43,7 +43,7 @@ public class MyGroupsFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        com.example.cohort.Group group = dataSnapshot.getValue(com.example.cohort.Group.class);
+                        com.example.projectapplication.Group group = dataSnapshot.getValue(com.example.projectapplication.Group.class);
                         assert group != null;
 
                         if (group.getMembers() == null) {
@@ -62,7 +62,7 @@ public class MyGroupsFragment extends Fragment {
                     }
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
                     myGroupsRecyclerView.setLayoutManager(layoutManager);
-                    myGroupsAdapter = new com.example.cohort.GroupsAdapter(myGroups, getContext());
+                    myGroupsAdapter = new com.example.projectapplication.GroupsAdapter(myGroups, getContext());
                     myGroupsRecyclerView.setAdapter(myGroupsAdapter);
                 }
             }

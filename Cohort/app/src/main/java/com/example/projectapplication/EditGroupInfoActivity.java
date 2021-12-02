@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -23,7 +23,7 @@ import java.util.Objects;
 public class EditGroupInfoActivity extends AppCompatActivity {
     private TextView headingText;
     private EditText groupNameInput, groupDescriptionInput, searchTag1Input, searchTag2Input, searchTag3Input;
-    private Button doneButton;
+    private Button doneButton, deleteGroupButton;
 
     private DatabaseReference groupsReference;
     private String groupId;
@@ -41,6 +41,7 @@ public class EditGroupInfoActivity extends AppCompatActivity {
         searchTag2Input = findViewById(R.id.editTextSearchTag2);
         searchTag3Input = findViewById(R.id.editTextSearchTag3);
         doneButton = findViewById(R.id.doneButton);
+        deleteGroupButton = findViewById(R.id.deleteGroupButton);
 
         groupsReference = FirebaseDatabase.getInstance().getReference("Groups");
 
@@ -68,7 +69,7 @@ public class EditGroupInfoActivity extends AppCompatActivity {
                 groupsReference.child(groupId).setValue(group).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "Group information edited", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(this, com.example.cohort.GroupInfoActivity.class);
+                        Intent intent = new Intent(this, com.example.projectapplication.GroupInfoActivity.class);
                         intent.putExtra("groupId", groupId);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
@@ -79,6 +80,8 @@ public class EditGroupInfoActivity extends AppCompatActivity {
             }
 
         });
+
+        deleteGroupButton.setOnClickListener(view -> deleteGroup(groupId));
 
     }
 
@@ -100,6 +103,19 @@ public class EditGroupInfoActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+    }
+
+    private void deleteGroup(String groupId) {
+        groupsReference.child(groupId).removeValue().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(this, "Group deleted", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -18,7 +18,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -133,41 +132,47 @@ public class GroupInfoActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 group = snapshot.getValue(Group.class);
 
-                assert group != null;
-                headingGroupName.setText(group.getName());
+                if (snapshot.exists()) {
+                    assert group != null;
+                    headingGroupName.setText(group.getName());
 
-                Glide.with(getApplicationContext())
-                        .asBitmap()
-                        .load(group.getImageUrl())
-                        .into(groupImage);
+                    Glide.with(getApplicationContext())
+                            .asBitmap()
+                            .load(group.getImageUrl())
+                            .into(groupImage);
 
-                groupName.setText(group.getName());
-                groupDescription.setText(group.getDescription());
-                groupHostName.setText(hostName);
+                    groupName.setText(group.getName());
+                    groupDescription.setText(group.getDescription());
+                    groupHostName.setText(hostName);
 
-                if (group.getHostId().equals(firebaseAuth.getUid())) {
-                    joinLeaveButton.setVisibility(View.GONE);
-                    editGroupInfoButton.setVisibility(View.VISIBLE);
+                    if (group.getHostId().equals(firebaseAuth.getUid())) {
+                        joinLeaveButton.setVisibility(View.GONE);
+                        editGroupInfoButton.setVisibility(View.VISIBLE);
 
-                    if (group.getMembers() != null) {
-                        viewMembersButton.setVisibility(View.VISIBLE);
-                    }
-                }
-
-                if (group.getMembers() == null) {
-                    numberOfGroupMembers.setText("Members: 0");
-                } else {
-                    numberOfGroupMembers.setText("Members: " + group.getMembers().size());
-                    for (User user : group.getMembers()) {
-                        if (user.getId().equals(firebaseAuth.getUid())) {
-                            joinLeaveButton.setText("Leave Group");
+                        if (group.getMembers() != null) {
                             viewMembersButton.setVisibility(View.VISIBLE);
                         }
                     }
+
+                    if (group.getMembers() == null) {
+                        numberOfGroupMembers.setText("Members: 0");
+                    } else {
+                        numberOfGroupMembers.setText("Members: " + group.getMembers().size());
+                        for (User user : group.getMembers()) {
+                            if (user.getId().equals(firebaseAuth.getUid())) {
+                                joinLeaveButton.setText("Leave Group");
+                                viewMembersButton.setVisibility(View.VISIBLE);
+                            }
+                        }
+                    }
+                    searchTag1.setText(group.getSearchTags().get(0));
+                    searchTag2.setText(group.getSearchTags().get(1));
+                    searchTag3.setText(group.getSearchTags().get(2));
+                } else {
+                    Intent intent = new Intent(GroupInfoActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
-                searchTag1.setText(group.getSearchTags().get(0));
-                searchTag2.setText(group.getSearchTags().get(1));
-                searchTag3.setText(group.getSearchTags().get(2));
             }
 
             @Override

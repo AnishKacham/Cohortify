@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -20,11 +20,11 @@ import java.util.Objects;
 
 public class EditMessageDialog extends AppCompatDialogFragment {
 
-    private com.example.cohort.Message message;
+    private com.example.projectapplication.Message message;
     private int position;
     private Context context;
 
-    public EditMessageDialog(com.example.cohort.Message message, int position, Context context) {
+    public EditMessageDialog(com.example.projectapplication.Message message, int position, Context context) {
         this.message = message;
         this.position = position;
         this.context = context;

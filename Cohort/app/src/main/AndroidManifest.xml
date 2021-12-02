@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cohort">
+    package="com.example.projectapplication">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -23,34 +23,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectApplication">
         <activity
-            android:name=".EditGroupInfoActivity"
+            android:name="com.example.projectapplication.EditGroupInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MemberProfileActivity"
+            android:name="com.example.projectapplication.MemberProfileActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GroupMembersActivity"
+            android:name="com.example.projectapplication.GroupMembersActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GroupChatActivity"
+            android:name="com.example.projectapplication.GroupChatActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GroupInfoActivity"
+            android:name="com.example.projectapplication.GroupInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GroupImageActivity"
+            android:name="com.example.projectapplication.GroupImageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UserProfileImageActivity"
+            android:name="com.example.projectapplication.UserProfileImageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CreateGroupActivity"
+            android:name="com.example.projectapplication.CreateGroupActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginVerifyOTPActivity"
+            android:name="com.example.projectapplication.LoginVerifyOTPActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.projectapplication.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,16 +59,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VerifyOTPActivity"
+            android:name="com.example.projectapplication.VerifyOTPActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SendOTPActivity"
+            android:name="com.example.projectapplication.SendOTPActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.projectapplication.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.projectapplication.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

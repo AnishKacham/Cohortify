@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 public class Message {
     public String id, senderId, groupId, timestamp, message, userId, joinLeave;

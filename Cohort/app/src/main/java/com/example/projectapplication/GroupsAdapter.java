@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -91,7 +91,7 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupsView
 
         holder.groupLayout.setOnClickListener(view -> {
             if (group.getHostId().equals(FirebaseAuth.getInstance().getUid())) {
-                Intent intent = new Intent(context, com.example.cohort.GroupChatActivity.class);
+                Intent intent = new Intent(context, com.example.projectapplication.GroupChatActivity.class);
                 intent.putExtra("groupId", group.getId());
                 intent.putExtra("hostName", holder.groupHostName.getText().toString());
                 context.startActivity(intent);
@@ -99,19 +99,19 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupsView
             else if (group.getMembers() != null) {
                 for (User user : group.getMembers()) {
                     if (user.getId().equals(FirebaseAuth.getInstance().getUid())) {
-                        Intent intent = new Intent(context, com.example.cohort.GroupChatActivity.class);
+                        Intent intent = new Intent(context, com.example.projectapplication.GroupChatActivity.class);
                         intent.putExtra("groupId", group.getId());
                         intent.putExtra("hostName", holder.groupHostName.getText().toString());
                         context.startActivity(intent);
                     } else {
-                        Intent intent = new Intent(context, com.example.cohort.GroupInfoActivity.class);
+                        Intent intent = new Intent(context, com.example.projectapplication.GroupInfoActivity.class);
                         intent.putExtra("groupId", group.getId());
                         intent.putExtra("hostName", holder.groupHostName.getText().toString());
                         context.startActivity(intent);
                     }
                 }
             } else {
-                Intent intent = new Intent(context, com.example.cohort.GroupInfoActivity.class);
+                Intent intent = new Intent(context, com.example.projectapplication.GroupInfoActivity.class);
                 intent.putExtra("groupId", group.getId());
                 intent.putExtra("hostName", holder.groupHostName.getText().toString());
                 context.startActivity(intent);

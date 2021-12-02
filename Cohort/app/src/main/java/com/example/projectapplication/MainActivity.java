@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new AccountFragment();
                     break;
                 case R.id.myGroups:
-                    selectedFragment = new com.example.cohort.MyGroupsFragment();
+                    selectedFragment = new com.example.projectapplication.MyGroupsFragment();
             }
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();

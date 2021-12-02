@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
                 map.put("lastName", lastName);
                 map.put("email", email);
 
-                Intent intent = new Intent(this, com.example.cohort.UserProfileImageActivity.class);
+                Intent intent = new Intent(this, com.example.projectapplication.UserProfileImageActivity.class);
                 intent.putExtra("userMap", map);
                 //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void sendToLoginActivity() {
-        startActivity(new Intent(this, com.example.cohort.LoginActivity.class));
+        startActivity(new Intent(this, com.example.projectapplication.LoginActivity.class));
     }
 
 }

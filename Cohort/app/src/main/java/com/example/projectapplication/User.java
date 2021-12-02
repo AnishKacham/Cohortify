@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 public class User {
     private String id, firstName, lastName, email, phone, imageUrl;

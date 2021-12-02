@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class GroupMembersActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
-    private com.example.cohort.Group group;
+    private com.example.projectapplication.Group group;
     private ArrayList<User> members;
     private RecyclerView membersRecyclerView;
     private TextView headingText;
@@ -43,7 +43,7 @@ public class GroupMembersActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                group = snapshot.getValue(com.example.cohort.Group.class);
+                group = snapshot.getValue(com.example.projectapplication.Group.class);
                 assert group != null;
                 headingText.setText("Members of " + group.getName());
                 members = new ArrayList<>();

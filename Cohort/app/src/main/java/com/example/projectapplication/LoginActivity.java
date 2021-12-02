@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.content.Intent;
 import android.os.Build;
@@ -135,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                                             verificationID = verificationId;
                                             resendToken = forceResendingToken;
 
-                                            Intent intent = new Intent(LoginActivity.this, com.example.cohort.LoginVerifyOTPActivity.class);
+                                            Intent intent = new Intent(LoginActivity.this, com.example.projectapplication.LoginVerifyOTPActivity.class);
                                             intent.putExtra("phone", phoneNumber);
                                             intent.putExtra("verificationId", verificationID);
                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -58,7 +58,7 @@ public class AccountFragment extends Fragment {
 
         logoutButton.setOnClickListener(view1 -> {
             firebaseAuth.signOut();
-            Intent intent = new Intent(getContext(), com.example.cohort.LoginActivity.class);
+            Intent intent = new Intent(getContext(), com.example.projectapplication.LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
@@ -75,7 +75,7 @@ public class AccountFragment extends Fragment {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                com.example.cohort.User user = snapshot.getValue(com.example.cohort.User.class);
+                com.example.projectapplication.User user = snapshot.getValue(com.example.projectapplication.User.class);
                 String fullName = user.getFirstName() + " " + user.getLastName();
                 String phone = user.getPhone();
                 String email = user.getEmail();

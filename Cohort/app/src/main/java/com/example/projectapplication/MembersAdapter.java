@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -31,11 +31,11 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersV
     ArrayList<User> members;
     Context context;
     Activity activity;
-    com.example.cohort.Group group;
+    com.example.projectapplication.Group group;
 
     ArrayList<Message> messages;
 
-    public MembersAdapter (ArrayList<User> members, Context context, Activity activity, com.example.cohort.Group group) {
+    public MembersAdapter (ArrayList<User> members, Context context, Activity activity, com.example.projectapplication.Group group) {
         this.members = members;
         this.context = context;
         this.activity = activity;

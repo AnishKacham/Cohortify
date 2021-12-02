@@ -1,4 +1,4 @@
-package com.example.cohort;
+package com.example.projectapplication;
 
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
@@ -94,7 +94,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                     Uri downloadUri = task2.getResult();
                                     if (!(downloadUri == null)) {
                                         String imagePath = downloadUri.toString();
-                                        com.example.cohort.User user = new com.example.cohort.User(firebaseAuth.getUid(), map.get("firstName"), map.get("lastName"), map.get("email"), phoneNumber, imagePath);
+                                        com.example.projectapplication.User user = new com.example.projectapplication.User(firebaseAuth.getUid(), map.get("firstName"), map.get("lastName"), map.get("email"), phoneNumber, imagePath);
                                         databaseReference.child(Objects.requireNonNull(firebaseAuth.getUid())).setValue(user).addOnCompleteListener(task3 -> {
                                             if (task3.isSuccessful()) {
                                                 progressBar.setVisibility(View.GONE);
