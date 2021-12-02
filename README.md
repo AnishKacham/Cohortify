@@ -20,20 +20,22 @@ In phone authentication, the user has to verify his identity with his phone numb
 ### Dashboard :
 From here you can view and search for various Cohorts with their tags, and join the ones you’re interested in.
 
-![anishdetails](https://user-images.githubusercontent.com/80521574/144487989-b31d2a78-e9bb-464f-b89f-8f7332575eaa.jpg)
-![dashboardgroups3](https://user-images.githubusercontent.com/80521574/144487932-aca72a19-819a-49c9-a4c4-279777334903.jpg)
-![vrajdetails](https://user-images.githubusercontent.com/80521574/144488126-50d894d4-1400-4608-a0fc-e966629c9255.jpg)
+![dashboard](https://user-images.githubusercontent.com/80521574/144499002-70923278-b69f-4c52-802e-3d0c0078a378.jpg)
+![vinaydetails](https://user-images.githubusercontent.com/80521574/144500647-82723e3b-d318-4526-af5c-cfd41d70f5d7.jpg)
 
 ### Cohort creation and deletion :
 You can create a new cohort, with customizable interest tags and cohort-profile. If needed, the host can also delete a cohort.
 
-![creategroup](https://user-images.githubusercontent.com/80521574/144488794-81251ee3-2e01-4715-89a6-01132921f63d.jpg)
-![newgroupwithvalue](https://user-images.githubusercontent.com/80521574/144489605-490bb135-e726-4b26-a9cc-92ee32b83c4c.jpg)
+![createcohort](https://user-images.githubusercontent.com/80521574/144497861-caff7b92-4e0f-488a-b8c1-530faeefbfbc.jpg)
+![cohortwithvalues](https://user-images.githubusercontent.com/80521574/144498172-f3bd2646-27ad-4d73-a922-1bb1c06bc769.jpg)
+![deletegrp](https://user-images.githubusercontent.com/80521574/144497364-ac096348-2309-4a38-bbe9-dfeb9b7f7e34.jpg)
+![editgrp](https://user-images.githubusercontent.com/80521574/144497545-75630de1-20ea-4c9c-b04c-1d97bed972f4.jpg)
 
 ### Search cohorts by tags :
 The app lets you search for Cohorts based on your interests, this functionality can be found in the Dashboard.
 
-![sdpdgroupdetail](https://user-images.githubusercontent.com/80521574/144489793-333bc4d7-80f3-4dd8-8fd0-4afc234d8ad7.jpg)
+![cohortdetails](https://user-images.githubusercontent.com/80521574/144499495-57a6efa1-c7c6-4db9-ad64-a8d1d63fbe95.jpg)
+![search](https://user-images.githubusercontent.com/80521574/144500835-b7a2ebb9-e2e8-48c7-a674-2f34da076ede.jpg)
 ![finlennialsgroupdetails](https://user-images.githubusercontent.com/80521574/144489821-6a57cb9b-1cdd-4988-bb0e-9179bf172428.jpg)
 
 ### Cohort group chat :
