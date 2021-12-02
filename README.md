@@ -8,15 +8,16 @@ Do you ever feel that the pandemic has cut you off from your peers and that has 
 
 ## Getting Started
 
+* Fork and clone the project onto your PC if you wish to debug and examine the code. Follow the next 4 steps as well.
+* Create a Firebase project and add the app to it. 
+* Enable Phone Authentication, Realtime Database and Cloud Storage in the Firebase project. 
+* Add your SHA1 key to the project. 
+* Download the google-services.json file and replace the existing file in this repo with that file.
+* If you want to directly run the app, then download the apk file onto your Android device and install the app.
+
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Install Android Studio if you wish to debug and examine the code and/or have your own separate backend server.
 
 ### Executing program
 
@@ -52,11 +53,3 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
