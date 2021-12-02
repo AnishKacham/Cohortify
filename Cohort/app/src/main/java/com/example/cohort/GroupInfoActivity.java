@@ -187,7 +187,7 @@ public class GroupInfoActivity extends AppCompatActivity {
         }
         group.getMembers().add(currentUser);
         DatabaseReference groupDatabaseReference = FirebaseDatabase.getInstance().getReference("Groups");
-        groupDatabaseReference.child(group.getId()).setValue(group).addOnCompleteListener(task -> {
+        groupDatabaseReference.child(groupId).child("members").setValue(group.getMembers()).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 long tsLong = System.currentTimeMillis() / 1000;
                 String timestamp = Long.toString(tsLong);
@@ -213,9 +213,44 @@ public class GroupInfoActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void leaveGroup() {
-        group.getMembers().remove(currentUser);
+        int position = 0;
+        for (int i = 0; i < group.getMembers().size(); i++) {
+            if (group.getMembers().get(i).getId().equals(firebaseAuth.getUid())) {
+                position = i;
+                break;
+            }
+        }
+
+        group.getMembers().remove(position);
+
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Groups");
+        databaseReference.child(groupId).child("members").setValue(group.getMembers()).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                long tsLong = System.currentTimeMillis() / 1000;
+                String timestamp = Long.toString(tsLong);
+                Message message = new Message(FirebaseAuth.getInstance().getUid(), groupId, "left", timestamp);
+
+                groupMessages.add(message);
+
+                DatabaseReference chatReference = FirebaseDatabase.getInstance().getReference("Group chats");
+                chatReference.child(groupId).setValue(groupMessages).addOnCompleteListener(task1 -> {
+                    if (task1.isSuccessful()) {
+                        Toast.makeText(GroupInfoActivity.this, "You've left this group", Toast.LENGTH_SHORT).show();
+                        joinLeaveButton.setText("join group");
+                        Intent intent = new Intent(GroupInfoActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(GroupInfoActivity.this, Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+                Toast.makeText(this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        /*
         Query leaveQuery = databaseReference.child(groupId).child("members").orderByChild("id").equalTo(firebaseAuth.getUid());
         leaveQuery.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
@@ -255,5 +290,6 @@ public class GroupInfoActivity extends AppCompatActivity {
 
             }
         });
+*/
     }
 }

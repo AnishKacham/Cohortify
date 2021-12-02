@@ -72,7 +72,7 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupsView
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             User host = snapshot.getValue(User.class);
                             assert host != null;
-                            holder.groupHostName.setText(host.getFirstName() + " " + host.getLastName());
+                            holder.groupHostName.setText("Host: " + host.getFirstName() + " " + host.getLastName());
                         }
 
                         @Override
