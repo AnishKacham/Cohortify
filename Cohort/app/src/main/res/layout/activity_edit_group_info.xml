@@ -47,8 +47,8 @@
                     android:id="@+id/editTextGroupName"
                     style="@style/editTextNoColor"
                     android:layout_height="50dp"
-                    android:background="@drawable/text_field"
                     android:autofillHints="Enter group name"
+                    android:background="@drawable/text_field"
                     android:inputType="text"
                     android:maxLines="1"
                     android:paddingLeft="10dp"
@@ -116,9 +116,9 @@
                         android:id="@+id/editTextSearchTag1"
                         style="@style/editTextNoColor"
                         android:layout_height="40dp"
+                        android:layout_marginBottom="20dp"
                         android:background="@drawable/text_field"
                         android:inputType="text"
-                        android:layout_marginBottom="20dp"
                         android:maxLines="1"
                         android:paddingLeft="10dp"
                         android:textColor="@color/whiteTextColor"
@@ -143,12 +143,12 @@
                         android:id="@+id/editTextSearchTag2"
                         style="@style/editTextNoColor"
                         android:layout_height="40dp"
+                        android:layout_marginBottom="20dp"
                         android:background="@drawable/text_field"
                         android:inputType="text"
                         android:maxLines="1"
                         android:paddingLeft="10dp"
                         android:textColor="@color/whiteTextColor"
-                        android:layout_marginBottom="20dp"
                         android:textColorHighlight="@color/reddish"
                         android:textColorHint="@color/greenish"
                         android:textSize="20sp" />
@@ -180,19 +180,38 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textInputGroupDescription"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/doneButton"
+                        style="@style/loginButton"
+                        android:layout_below="@id/searchTagsInputLayout"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Save" />
+
+                    <Button
+                        android:id="@+id/deleteGroupButton"
+                        style="@style/loginButton"
+                        android:layout_below="@id/searchTagsInputLayout"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/rounded_corner_red"
+                        android:padding="10dp"
+                        android:text="Delete Group" />
+                </LinearLayout>
             </LinearLayout>
-
-            <Button
-                android:id="@+id/doneButton"
-                style="@style/loginButton"
-                android:layout_below="@id/searchTagsInputLayout"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rounded_corner"
-
-                android:text="Save" />
 
         </RelativeLayout>
 
