@@ -4,52 +4,30 @@ A simple app which boosts productivity by connecting like-minded individuals wit
 
 ## Why Cohortify?
 
-Do you ever feel that the pandemic has cut you off from your peers and that has hit your productivity levels? We at Cohortify aim to help solve that problem by bringing like-minded individuals together for meeting up and discussing their interests in various fields as well as acting as boost their productivity due to being surrounded by peers.
+Do you ever feel that the pandemic has cut you off from your peers and that has hit your productivity levels? We at Cohortify aim to help solve that problem by bringing like-minded individuals together for meeting up and discussing their interests in various fields as well as acting to boost their productivity due to being surrounded by peers.
 
-## Getting Started
+## App features
 
-* Fork and clone the project onto your PC if you wish to debug and examine the code. Follow the next 4 steps as well.
-* Create a Firebase project and add the app to it. 
-* Enable Phone Authentication, Realtime Database and Cloud Storage in the Firebase project. 
-* Add your SHA1 key to the project. 
-* Download the google-services.json file and replace the existing file in this repo with that file.
-* If you want to directly run the app, then download the apk file onto your Android device and install the app.
+OTP authentication and storing personal details of user :
+In phone authentication, the user has to verify his identity with his phone number. Inside the app, the user has to enter his phone number after that he/she will receive a verification code on his mobile number. He/she has to enter that OTP code and verify his/her identity.
 
-### Dependencies
+Dashboard :
+From here you can view and search for various Cohorts with their tags, and join the ones you’re interested in. 
+	
+Cohort creation and deletion :
+You can create a new cohort, with customizable interest tags and cohort-profile. If needed, the host can also delete a cohort.
 
-* Install Android Studio if you wish to debug and examine the code and/or have your own separate backend server.
+Filter Cohort by Cohort name and interest tags:
+The app lets you search for Cohorts based on your interests, this functionality can be found in the Dashboard. 
 
-### Executing program
+Cohort group chat :
+The app lets the members within a Cohort chat with each other in real time, which is powered by google firebase. You can also view group information along with the profile of the cohort members. A user can also edit and delete messages, which also has time stamp. It also shows if a message has been edited or not.
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+## App architecture
 
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+## Development Timeline :
 
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
+### Platform Used 
+ANDROID STUDIO
+GOOGLE FIREBASE AUTH.
